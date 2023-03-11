@@ -563,7 +563,7 @@
                     document.getElementById('mint').onclick = () => {
                         var tokenId = document.querySelector("[name=tokenID]").value; 
                         var amount= document.querySelector("[name=amount]").value;
-                        contract.methods.mint(account, tokenId, amount, "0x731133e9")
+                        contract.methods.mint(account, tokenId, amount, "0x731133e9").send({ from: account, value: "0"});
                     }
                     //updateCurrentCount();
                     //document.getElementById('increase-count').onclick = () => {
