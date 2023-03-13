@@ -24,6 +24,7 @@
         <script type="text/javascript">
             // connect to a wallet provider
             var account = null;
+	    var currentChainID = null;
             var contract = null;
             const ABI = myABI;
             const ADDRESS = "0x5E8Df5CDe80c63e833250937C536d0ccD8679c87"; // input contract address here
@@ -37,7 +38,7 @@
                     document.getElementById('wallet-address').textContent = account;
 
                     var currentChainID = await web3.eth.getChainId();
-                    document.getElementById('current-chain-id').textContent = account;
+                    document.getElementById('current-chain-id').textContent = currentChainID;
 
                     //<!-- Contract stuff Below!!!-->
                     contract = new web3.eth.Contract(ABI, ADDRESS);
