@@ -38,7 +38,9 @@
                     document.getElementById('wallet-address').textContent = account;
 
                     const currentChainID = await web3.eth.getChainId();
-                    document.getElementById('current-chain-id').textContent = currentChainID;
+			if (currentChainID != 137) {
+				return alert("switch to polygon chain")
+			}
 
                     //<!-- Contract stuff Below!!!-->
                     contract = new web3.eth.Contract(ABI, ADDRESS);
